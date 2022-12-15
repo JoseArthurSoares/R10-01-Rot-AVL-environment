@@ -23,7 +23,7 @@ public class BSTImpl<T extends Comparable<T>> implements BST<T> {
 	}
 
 	private int recursive_height(BSTNode<T> node) {
-		if (isEmpty()) return -1;
+		if (node.isEmpty()) return -1;
 		else return 1 + Math.max(recursive_height((BSTNode<T>) node.getLeft()), recursive_height((BSTNode<T>) node.getRight()));
 	}
 
@@ -107,7 +107,7 @@ public class BSTImpl<T extends Comparable<T>> implements BST<T> {
 		if (node.getLeft().isEmpty()){
 			return node;
 		} else {
-			return maximum_recursive((BSTNode<T>) node.getLeft());
+			return minimum_recursive((BSTNode<T>) node.getLeft());
 		}
 	}
 
